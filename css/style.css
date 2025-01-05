@@ -1,0 +1,127 @@
+/* Global styles */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    --primary-font: 'Lato', serif;
+    --primary-bg: #e0e3e6;       /* soft, near-white background */
+    --text-color: #111827;       /* dark, modern text color */
+    --accent-color: #3b82f6;     /* bright futuristic blue for buttons/links */
+    --accent-color-alt: #11af7b; /* vibrant teal for hover or secondary CTA */
+    --border-color: #e5e7eb;     /* light grey for subtle dividers */
+    --heading-color: #0f172a;    /* slightly darker for headlines */
+  }
+  
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--primary-font)
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+
+    padding: 0 30px;
+}
+
+
+/* nav */
+
+.intro-logo a {
+    color: var(--primary-bg);
+    transition: .5s;
+}
+
+
+.navbar {
+    background-color: var(--heading-color);
+    height: 80px;
+}
+
+.intro-logo {
+    font-size: 50px;
+}
+
+
+.fa-credit-card {
+    padding: 10px;
+    color: var(--primary-bg);
+    transition:.5s;
+}
+
+.fa-caret-down {
+    color: var(--primary-bg);
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+nav ul {
+    display: flex;       
+    gap: 4rem;
+    list-style: none;
+}
+
+
+/* nav animations */
+
+
+.fa-credit-card:hover,
+.intro-logo a:hover{
+
+    color: var(--accent-color-alt);
+}
+
+
+
+li a {
+    font-size: 30px;
+    color: var(--primary-bg);
+}
+
+/* feature section */
+
+.feature {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(auto, 1fr); /* Rows expand to fit content */
+    background-color: var(--primary-bg);
+    
+}
+
+.feature-main-heading {
+    grid-area: 1 / 1;
+    text-align: center;
+    padding: 100px;
+    font-size: 10rem;
+    overflow: hidden;
+    align-self: center;
+}
+
+.feature-img-main {
+    grid-area: 1 / 2;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+
+}
+
+.fa-robot {
+    padding: 10px;
+    font-size: 2em;
+}
+
+/*  */
