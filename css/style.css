@@ -6,11 +6,9 @@
 :root {
     --primary-font: 'Lato', serif;
     --primary-bg: #e0e3e6;       /* soft, near-white background */
-    --text-color: #111827;       /* dark, modern text color */
-    --accent-color: #3b82f6;     /* bright futuristic blue for buttons/links */
-    --accent-color-alt: #11af7b; /* vibrant teal for hover or secondary CTA */
-    --border-color: #e5e7eb;     /* light grey for subtle dividers */
-    --heading-color: #0f172a;    /* slightly darker for headlines */
+    --accent-colour-alt: #24f9b2; /* vibrant teal for hover or secondary CTA */
+    --border-colour: #e5e7eb;     /* light grey for subtle dividers */
+    --bg-colour: #000000;    /* slightly darker for headlines */
   }
   
 * {
@@ -20,7 +18,9 @@
 }
 
 body {
-    font-family: var(--primary-font)
+    font-family: var(--primary-font);
+    background-color: var(--bg-colour);
+    
 }
 
 ul li {
@@ -29,12 +29,20 @@ ul li {
 
 a {
     text-decoration: none;
-
     padding: 0 30px;
+
 }
 
 
+li a {
+    font-size: 30px;
+    color: var(--primary-bg);
+}
+
+
+
 /* nav */
+
 
 .intro-logo a {
     color: var(--primary-bg);
@@ -43,8 +51,8 @@ a {
 
 
 .navbar {
-    background-color: var(--heading-color);
-    height: 80px;
+    background-color: var(--bg-colour);
+    height: auto;
 }
 
 .intro-logo {
@@ -76,52 +84,141 @@ nav ul {
 }
 
 
+.nav-item-home a,
+.nav-item-home a + i,
+.nav-item-about a,
+.nav-item-about a + i,
+.nav-item-features a,
+.nav-item-features a + i,
+.nav-item-login a,
+.nav-item-login a + i {
+    transition: .5s;
+    
+}
+
+.nav-item-home a,
+.nav-item-about a,
+.nav-item-features a,
+.nav-item-login a {
+    position: relative; /* Required for the ::after pseudo-element */
+    text-decoration: none; /* Removes the default underline */
+    color: var(--primary-bg); /* Initial text colour */
+    transition: color 0.3s ease; /* Smooth text colour change */
+}
+
+
 /* nav animations */
 
 
 .fa-credit-card:hover,
 .intro-logo a:hover{
 
-    color: var(--accent-color-alt);
+    color: var(--accent-colour-alt);
+    
 }
 
 
-
-li a {
-    font-size: 30px;
-    color: var(--primary-bg);
+.nav-item-home a:hover,
+.nav-item-home a:hover + i,
+.nav-item-about a:hover,
+.nav-item-about a:hover + i,
+.nav-item-features a:hover,
+.nav-item-features a:hover + i,
+.nav-item-login a:hover,
+.nav-item-login a:hover + i {
+    color: var(--accent-colour-alt);
+    
 }
+
+
+.nav-item-home a::after,
+.nav-item-about a::after,
+.nav-item-features a::after,
+.nav-item-login a::after {
+    content: ""; /* Creates the line */
+    position: absolute;
+    bottom: -5px; /* Adjust to control distance from text */
+    left: 0;
+    width: 0%; /* Start with no line */
+    height: 2px; /* Thickness of the line */
+    background-color: var(--accent-colour-alt); /* Line colour */
+    transition: width 0.4s ease; /* Smooth animation for the line */
+}
+
+.nav-item-home a:hover::after,
+.nav-item-about a:hover::after,
+.nav-item-features a:hover::after,
+.nav-item-login a:hover::after {
+    width: 100%; /* Full width when hovered */
+}
+
+.nav-item-home a:hover,
+.nav-item-about a:hover,
+.nav-item-features a:hover,
+.nav-item-login a:hover {
+    color: var(--accent-colour-alt); /* Change text colour on hover */
+}
+
+
 
 /* feature section */
 
 .feature {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(auto, 1fr); /* Rows expand to fit content */
+    grid-template-rows: auto;
     background-color: var(--primary-bg);
+    position: relative;
+    padding: 50px 20px;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+   
     
 }
+
 
 .feature-main-heading {
     grid-area: 1 / 1;
     text-align: center;
     padding: 100px;
-    font-size: 10rem;
-    overflow: hidden;
+    font-size: 6rem;
     align-self: center;
-}
-
-.feature-img-main {
-    grid-area: 1 / 2;
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-
+    z-index: 1;
+    color: var(--bg-colour); /* Matches the background color */
 }
 
 .fa-robot {
-    padding: 10px;
+    padding: 50px;
     font-size: 2em;
+    color: var(--bg-colour); /* Matches the background color */
 }
 
-/*  */
+
+.feature-img-main {
+    grid-area: 1 / 2;
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+    object-fit:cover;
+    align-self:center;
+    justify-self: center;
+
+}
+
+/* feature 2 */
+
+
+.feature-2 {
+    display: flex;
+    background-color: var(--bg-colour);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-2-main-heading {
+    padding: 80px;
+    color: var(--border-colour);
+    font-size: 100px;
+    text-align: center;
+    
+}
