@@ -18,7 +18,7 @@
     --primary-bg: #ffffff;
     --accent-colour: #4208e3;
     --border-colour: #e5e7eb;
-    --bg-colour: #0044ff;
+    --bg-colour: #090a4a;
     --dark-colour: #1c1c1c;
     --added: #ffdee2;
 }
@@ -74,7 +74,7 @@ li a {
 }
 
 .navbar {
-    background: linear-gradient(to left, #00d2ff, #3a47d5); /* Apply gradient */
+    background: var(--bg-colour);
 
     height: max-content;
 }
@@ -127,7 +127,7 @@ nav ul {
     left: 0;
     width: 0%;
     height: 2px;
-    background-color: var(--accent-colour);
+    background-color: var(--border-colour);
     transition: width 0.4s ease;
 }
 
@@ -194,7 +194,7 @@ nav ul {
 
 .feature-2 {
     display: flex;
-    background-color: var(--bg-colour);
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -205,6 +205,7 @@ nav ul {
     color: var(--primary-bg);
     font-size: 100px;
     text-align: center;
+    
 }
 
 .flex-2 {
