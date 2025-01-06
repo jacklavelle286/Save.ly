@@ -17,10 +17,10 @@
     --primary-font: 'Lato', serif;
     --primary-bg: #ffffff;
     --accent-colour: #4208e3;
-    --border-colour: #e5e7eb;
+    --border-colour: #e9e5eb;
     --bg-colour: #090a4a;
     --dark-colour: #1c1c1c;
-    --added: #ffdee2;
+    --added: #ffd2d2;
 }
 
 * {
@@ -75,16 +75,15 @@ li a {
 
 .navbar {
     background: var(--bg-colour);
-
-    height: max-content;
+    height: 75px;
 }
 
 .intro-logo {
     font-size: 50px;
 }
 
-.fa-credit-card {
-    padding: 10px;
+.fa-money-bill-trend-up {
+    padding: 2px;
     color: var(--primary-bg);
     transition: 0.5s;
 }
@@ -102,7 +101,7 @@ li a {
 
 nav ul {
     display: flex;
-    gap: 4rem;
+    gap: 3rem;
     list-style: none;
 }
 
@@ -162,9 +161,8 @@ nav ul {
 
 .feature-main-heading {
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
     background: linear-gradient(to right, #00d2ff, #3a47d5); /* Apply gradient */
-
     margin: 0;
     padding: 20px;
 }
@@ -257,7 +255,7 @@ nav ul {
 
 
 .image-main-feature {
-    height: 1000px;
+    height: 900px;
     border-radius: 10px;
     
 }
@@ -269,6 +267,7 @@ nav ul {
 .cards {
     background-color: white;
     display: grid;
+    
     grid-template-columns: repeat(3, 1fr);
 
 }
@@ -298,7 +297,7 @@ nav ul {
 
 
 .card h1 {
-    color:
+    color: var(--bg-colour);
 }
 
 .card a {
@@ -311,6 +310,16 @@ nav ul {
 .card1 {
 
     grid-area: 1/1;
+}
+
+.card2 {
+
+    grid-area: 1/2;
+}
+
+.card3 {
+
+    grid-area: 1/3;
 }
 
 
