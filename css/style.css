@@ -67,6 +67,7 @@ li a {
 
 .btn:hover {
     transform: translateY(-15px);
+    color: var(--accent-colour);
 }
 
 .intro-text a {
@@ -232,7 +233,6 @@ nav ul {
     color: transparent; /* Makes the text transparent */
     background: linear-gradient(to right, #00d2ff, #3a47d5); /* Apply gradient */
     background-clip: text; /* Clip the background to the text */
-    text-fill-color: transparent; /* Ensures text is transparent */
     text-align: center;
     border-radius: 20px; /* Rounded corners for the white box */
     background-color: var(--bg-colour); /* White background for the container */
@@ -273,7 +273,7 @@ nav ul {
 }
 
 .card {
-    background-color: var(--added);
+    background-color: var(--border-colour);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -291,7 +291,7 @@ nav ul {
 
 
 .card:hover {
-    transform: translateY(-15px);
+    transform: scale(1.05);
 }
 
 
@@ -325,4 +325,10 @@ nav ul {
 
 .fa-check {
     padding: 20px;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2, 100px);
 }
