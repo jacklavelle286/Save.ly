@@ -1,13 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 :root {
     --primary-font: 'Lato', serif;
-    --primary-bg: #dedede;
-    --accent-colour: #15efe1;
+    --primary-bg: #ffffff;
+    --accent-colour: #4208e3;
     --border-colour: #e5e7eb;
-    --bg-colour: #0e021d;
+    --bg-colour: #0044ff;
     --dark-colour: #1c1c1c;
-    --added: #ff1e00;
+    --added: #ffdee2;
 }
 
 * {
@@ -19,6 +32,11 @@
 body {
     font-family: var(--primary-font);
     background-color: var(--bg-colour);
+
+}
+
+h1 { 
+    color: #000;
 }
 
 ul li {
@@ -43,6 +61,12 @@ li a {
     padding: 20px 60px;
     border-radius: 20px;
     font-size: 3em;
+    transition: 1s;
+}
+
+
+.btn:hover {
+    transform: translateY(-15px);
 }
 
 .intro-text a {
@@ -50,7 +74,8 @@ li a {
 }
 
 .navbar {
-    background-color: var(--bg-colour);
+    background: linear-gradient(to left, #00d2ff, #3a47d5); /* Apply gradient */
+
     height: max-content;
 }
 
@@ -91,12 +116,6 @@ nav ul {
     transition: color 0.3s ease;
 }
 
-.nav-item-home a:hover,
-.nav-item-about a:hover,
-.nav-item-features a:hover,
-.nav-item-login a:hover {
-    color: var(--accent-colour);
-}
 
 .nav-item-home a::after,
 .nav-item-about a::after,
@@ -137,19 +156,15 @@ nav ul {
     align-items: center;
     flex-direction: column;
     background-color: white;
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 10px;
-}
-
-.feature-main-heading-container.feature-second {
-    background-color: var(--bg-colour);
 }
 
 .feature-main-heading {
     text-align: center;
     font-size: 3rem;
-    color: var(--bg-colour);
+    background: linear-gradient(to right, #00d2ff, #3a47d5); /* Apply gradient */
+
     margin: 0;
     padding: 20px;
 }
@@ -187,30 +202,117 @@ nav ul {
 
 .feature-2-main-heading {
     padding: 80px;
-    color: var(--border-colour);
+    color: var(--primary-bg);
     font-size: 100px;
     text-align: center;
 }
 
 .flex-2 {
     display: flex;
-    gap: 300px;
+    gap: 200px;
     align-items: center;
+    padding: 50px;
+}
+
+.intro-nav {
+    display: flex;
+    padding-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+
+}
+
+.intro-nav h1 {
+    width: 1500px;
+    padding: 50px;
+    font-size: 9rem;
+    width: 100%;
+    font-weight: bolder;
+    text-wrap: wrap;
+    color: transparent; /* Makes the text transparent */
+    background: linear-gradient(to right, #00d2ff, #3a47d5); /* Apply gradient */
+    background-clip: text; /* Clip the background to the text */
+    text-fill-color: transparent; /* Ensures text is transparent */
+    text-align: center;
+    border-radius: 20px; /* Rounded corners for the white box */
+    background-color: var(--bg-colour); /* White background for the container */
+    margin: 60px 0;
+    padding: 100px;
+}
+
+.gradient-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    color: transparent; /* Makes the text transparent */
+    background: linear-gradient(to right, #00d2ff, #3a47d5); /* Apply gradient */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Ensures text is transparent in webkit browsers */
+    background-clip: text; /* Standard background clip */
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
 }
 
 
-/* Add a wiggle animation */
-@keyframes wiggle {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(2deg); }
-    50% { transform: rotate(-2deg); }
-    75% { transform: rotate(2deg); }
-    100% { transform: rotate(0deg); }
+.image-main-feature {
+    height: 1000px;
+    border-radius: 10px;
+    
 }
 
-/* Apply the animation on hover */
-.wiggle:hover {
-    animation: wiggle 0.5s ease-in-out; /* Adjust duration and easing as needed */
-    display: inline-block; /* Ensure inline elements like text can transform */
+.intro-nav h1 {
+    animation: fadeIn 1.5s ease-in-out;
 }
 
+.cards {
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+.card {
+    background-color: var(--added);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-colour);
+    gap: 20px;
+    margin:100px;
+    border-radius: 10px;
+    padding: 20px 0;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+    transition: 1s;
+}
+
+
+
+
+.card:hover {
+    transform: translateY(-15px);
+}
+
+
+
+.card h1 {
+    color:
+}
+
+.card a {
+    padding: 10px;
+    font-size: 2rem;
+    border-radius: 10px;
+    
+}
+
+.card1 {
+
+    grid-area: 1/1;
+}
+
+
+.fa-check {
+    padding: 20px;
+}
