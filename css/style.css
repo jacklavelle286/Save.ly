@@ -257,6 +257,7 @@ nav ul {
 .image-main-feature {
     height: 900px;
     border-radius: 10px;
+
     
 }
 
@@ -265,7 +266,7 @@ nav ul {
 }
 
 .cards {
-    background-color: white;
+    background: var(--primary-bg);
     display: grid;
     
     grid-template-columns: repeat(3, 1fr);
@@ -278,13 +279,14 @@ nav ul {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--dark-colour);
+    color: var(--);
     gap: 20px;
-    margin:100px;
     border-radius: 10px;
+    margin:100px;
     padding: 20px 0;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
     transition: 1s;
+    border: 5px solid var(--);
 }
 
 
@@ -327,8 +329,30 @@ nav ul {
     padding: 20px;
 }
 
-.footer {
+footer {
     display: grid;
+}
+
+
+footer,
+footer h1 {
+    color: var(--primary-bg);
+}
+
+.footer {
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(2, 100px);
+
+}
+
+.footer1 {
+    grid-area: 1/1;
+}
+
+.footer2 {
+    grid-area: 2/1;
+}
+
+.footer3 {
+    grid-area: 1/3;
 }
