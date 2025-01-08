@@ -21,6 +21,7 @@
     --bg-colour: #090a4a;
     --dark-colour: #1c1c1c;
     --added: #ffd2d2;
+    --turqoise: #13f5c4dd;
 }
 
 * {
@@ -331,28 +332,62 @@ nav ul {
 
 footer {
     display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: min-content;
+    
 }
 
 
 footer,
 footer h1 {
     color: var(--primary-bg);
+    text-align: center;
 }
 
-.footer {
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(2, 100px);
 
-}
+
 
 .footer1 {
-    grid-area: 1/1;
-}
-
-.footer2 {
     grid-area: 2/1;
 }
 
+.footer2 {
+    grid-area: 3/1;
+}
+
+.footer1
+.footer2 ul
+.footer3 ul li
+ {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end
+
+
+}
+
 .footer3 {
-    grid-area: 1/3;
+    grid-area: 2/2;
+    font-size: large;
+    padding: 10px;
+}
+
+.footer4 ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+
+}
+
+.footer4 {
+    grid-area: 2/3;
+    flex-direction: row;
+
+}
+footer li:hover,
+footer i:hover {
+    color: var(--turqoise);
 }
