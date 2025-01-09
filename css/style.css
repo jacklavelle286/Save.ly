@@ -32,13 +32,10 @@
 
 body {
     font-family: var(--primary-font);
-    background-color: var(--bg-colour);
 
 }
 
-h1 { 
-    color: #000;
-}
+
 
 ul li {
     list-style: none;
@@ -139,32 +136,18 @@ nav ul {
     width: 100%;
 }
 
-.feature {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    justify-items: center;
-    align-items: center;
-    background-color: var(--primary-bg);
-    position: relative;
-    padding: 100px;
-    gap: 50px;
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-}
-
 .feature-main-heading-container {
     display: flex;
     align-items: center;
     flex-direction: column;
     background-color: white;
     padding: 20px;
-    border-radius: 10px;
+
 }
 
 .feature-main-heading {
-    text-align: center;
     font-size: 4rem;
-    background: linear-gradient(to right, #00d2ff, #3a47d5); /* Apply gradient */
+    background: linear-gradient(to right, #00ffea, #3a47d5); /* Apply gradient */
     margin: 0;
     padding: 20px;
 }
@@ -177,36 +160,31 @@ nav ul {
     font-size: 2rem;
     color: var(--dark-colour);
     margin: 0;
-    text-align: center;
+    text-align: left;
     padding: 30px;
+    width: 80%;
 }
 
 .feature-main-heading-container.feature-second h2 {
     color: var(--primary-bg);
 }
 
-.feature-img-main {
-    grid-area: 1 / 2;
-    width: 80%;
-    height: auto;
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-}
+
 
 .feature-2 {
     display: flex;
-
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--primary-bg);
+
 }
 
+
 .feature-2-main-heading {
-    padding: 80px;
-    color: var(--primary-bg);
-    font-size: 100px;
-    text-align: center;
-    
+    font-size: 5rem;
 }
+
 
 .flex-2 {
     display: flex;
@@ -224,6 +202,7 @@ nav ul {
 
 }
 
+
 .intro-nav h1 {
     width: 1500px;
     padding: 50px;
@@ -235,14 +214,13 @@ nav ul {
     background: linear-gradient(to right, #00d2ff, #3a47d5); /* Apply gradient */
     background-clip: text; /* Clip the background to the text */
     text-align: center;
-    border-radius: 20px; /* Rounded corners for the white box */
     background-color: var(--bg-colour); /* White background for the container */
     margin: 60px 0;
     padding: 100px;
 }
 
 .gradient-heading {
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: bold;
     color: transparent; /* Makes the text transparent */
     background: linear-gradient(to right, #00d2ff, #3a47d5); /* Apply gradient */
@@ -256,8 +234,11 @@ nav ul {
 
 
 .image-main-feature {
-    height: 900px;
+
+    width: 80%;
+    object-fit: cover;
     border-radius: 10px;
+
 
     
 }
@@ -266,32 +247,123 @@ nav ul {
     animation: fadeIn 1.5s ease-in-out;
 }
 
+
+
+.carosel {
+    background-color: var(--primary-bg);
+    height: 300px;
+    padding: 10px;
+    text-align: center;
+    
+
+}
+
+
+
+
+.fa-brands {
+    font-size: 10rem;
+    color: var(--bg-colour);
+    padding: 0 200px;
+}
+
+
+
+
+/* carosel */
+
+
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-250px * 7))}
+}
+
+.carosel h1 {
+    font-size: 3em;
+}
+
+.slider {
+	background-color: white;
+	height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+	overflow:hidden;
+	position: relative;
+
+	
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: 2;
+	}
+	
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	&::before {
+		left: 0;
+		top: 0;
+	}
+	
+	.slide-track {
+		animation: scroll 40s linear infinite;
+		display: flex;
+		width: calc(250px * 14);
+	}
+	
+	.slide {
+		height: 200px;
+		width: 250px;
+	}
+}
+
+
+
+
 .cards {
     background: var(--primary-bg);
     display: grid;
-    
     grid-template-columns: repeat(3, 1fr);
 
 }
 
 .card {
-    background-color: var(--border-colour);
+    background-color: var(--primary-bg);
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: left;
     justify-content: center;
-    color: var(--);
     gap: 20px;
     border-radius: 10px;
     margin:100px;
     padding: 20px 0;
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.1);
     transition: 1s;
     border: 5px solid var(--);
 }
 
 
+.card a {
+    background-color: var(--bg-colour);
+    color: var(--border-colour);
+    margin-top: 50px;
+}
 
+
+.card a:hover {
+    color: var(--border-colour);
+}
+
+.card li {
+    font-size: 2rem;
+    text-align: left;
+}
 
 .card:hover {
     transform: scale(1.05);
@@ -303,12 +375,6 @@ nav ul {
     color: var(--bg-colour);
 }
 
-.card a {
-    padding: 10px;
-    font-size: 2rem;
-    border-radius: 10px;
-    
-}
 
 .card1 {
 
@@ -330,64 +396,3 @@ nav ul {
     padding: 20px;
 }
 
-footer {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3, 1fr);
-    height: min-content;
-    
-}
-
-
-footer,
-footer h1 {
-    color: var(--primary-bg);
-    text-align: center;
-}
-
-
-
-
-.footer1 {
-    grid-area: 2/1;
-}
-
-.footer2 {
-    grid-area: 3/1;
-}
-
-.footer1
-.footer2 ul
-.footer3 ul li
- {
-    display: flex;
-    flex-direction: column;
-    align-items:flex-end
-
-
-}
-
-.footer3 {
-    grid-area: 2/2;
-    font-size: large;
-    padding: 10px;
-}
-
-.footer4 ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 0;
-
-}
-
-.footer4 {
-    grid-area: 2/3;
-    flex-direction: row;
-
-}
-footer li:hover,
-footer i:hover {
-    color: var(--turqoise);
-}
