@@ -73,69 +73,7 @@ li a {
     color: #000;
 }
 
-.navbar {
-    background: var(--bg-colour);
-    height: 75px;
-}
 
-.intro-logo {
-    font-size: 50px;
-}
-
-.fa-money-bill-trend-up {
-    padding: 2px;
-    color: var(--primary-bg);
-    transition: 0.5s;
-}
-
-.fa-caret-down {
-    color: var(--primary-bg);
-}
-
-.nav-grid {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    padding: 0 20px;
-}
-
-nav ul {
-    display: flex;
-    gap: 3rem;
-    list-style: none;
-}
-
-.nav-item-home a,
-.nav-item-about a,
-.nav-item-features a,
-.nav-item-login a {
-    position: relative;
-    text-decoration: none;
-    color: var(--primary-bg);
-    transition: color 0.3s ease;
-}
-
-
-.nav-item-home a::after,
-.nav-item-about a::after,
-.nav-item-features a::after,
-.nav-item-login a::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: var(--border-colour);
-    transition: width 0.4s ease;
-}
-
-.nav-item-home a:hover::after,
-.nav-item-about a:hover::after,
-.nav-item-features a:hover::after,
-.nav-item-login a:hover::after {
-    width: 100%;
-}
 
 .feature-main-heading-container {
     display: flex;
@@ -234,6 +172,26 @@ nav ul {
 }
 
 
+@keyframes blurIn {
+    0% {
+        filter: blur(10px);
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.image-main-feature {
+    width: 80%;
+    object-fit: cover;
+    border-radius: 10px;
+    animation: blurIn 2s ease-in-out;
+}
+
+
+
 .image-main-feature {
 
     width: 80%;
@@ -283,12 +241,28 @@ nav ul {
     font-size: 3em;
 }
 
+.cards-and-form {
+
+    display: flex;
+    justify-items: center;  
+    align-items: stretch;
+
+}   
+
+
+.div-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+
+
 .slider {
 	background-color: white;
 	height: 300px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+
 	overflow:hidden;
 	position: relative;
 
@@ -325,18 +299,17 @@ nav ul {
 
 
 .cards {
+    grid-area: 1/1;
     display: flex;
     justify-content: center;
+    align-items: center;
     color: var(--bg-colour);
     scrollbar-color: var(--turqoise);
 
 }
 
 .scroller {
-    box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.1);
-    width: 50%;
     align-items: center;
-    border-radius: 10px;
     font-size: 1.2rem;
 
 
@@ -353,13 +326,17 @@ nav ul {
   }
   
 
-.scroller {
+  .scroller {
     height: 500px;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    scrollbar-width: none; /* For Firefox */
+}
 
-  }
-  
+.scroller::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+}
+
 .scroller section {
     scroll-snap-align: start;
 
@@ -369,14 +346,79 @@ nav ul {
     padding: 10px;
 }
 
-.cards-and-form {
-    display: flex;
-    align-items: space-around;
-}
 
 .form {
+    grid-area: 1/2;
     display: flex;
-    background-color: var(--accent-colour);
+    align-items: center;
+    justify-content: center;
+
+}
+
+form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
     height: 500px;
-    width: 400px;
+    color: var(--bg-colour);
+}
+
+form label {
+
+    font-weight: bold;
+    color: var(--bg-colour);
+}
+
+form input,
+form textarea,
+form select {
+    font-size: 1rem;
+    font-family: var(--primary-font);
+    border: 1px solid var(--border-colour);
+    border-radius: 8px;
+    background-color: var(--primary-bg);
+    color: var(--bg-colour);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+    border-color: var(--bg-colour);
+    box-shadow: 0 0 5px var(--accent-colour);
+    outline: none;
+    
+
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: var(--bg-colour);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+form button:active {
+    transform: translateY(0);
+}
+
+.scroll-buttons button {
+    padding: 30px 50px;
+    margin: 70px 10px;
+    font-size: 2rem;
+    color: var(--bg-colour);
+    background-color: var(--primary-bg);
+    border: 1px solid var(--border-colour);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scroll-buttons button:hover {
+    background-color: var(--bg-colour);
+    color: var(--primary-bg);
+    transform: translateY(-2px);
 }

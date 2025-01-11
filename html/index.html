@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../scripts/main.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Save.ly | Budgeting Software</title>
 </head>
@@ -108,14 +109,17 @@
                 </div>
             </div>
         </div>                 
-        
+        <div class="scroll-buttons">
+            <button id="personal-button">Personal Budget</button>
+            <button id="family-button">Family Budget</button>
+            <button id="business-button">Business Budget</button>
+            <button id="enterprise-button">Enterprise Budget</button>
+        </div>
 
-
-        
-        <div class="cards-and-form">
+        <div class="div-card-grid">
             <div class="cards">
                 <article class="scroller">
-                    <section>
+                    <section id="personal-budget">
                         <h2>Personal Budget</h2>
                         <h2>Free</h2>
                         <h5>Up to 3 Individual Budgets</h5>
@@ -129,7 +133,7 @@
                         </ul>
                     </section>
                     
-                    <section>
+                    <section id="family-budget">
                         <h2>Family Budget</h2>
                         <h2>£9.99/month</h2>
                         <h5>Up to 5 Shared Budgets</h5>
@@ -145,7 +149,7 @@
                         </ul>
                     </section>
                     
-                    <section>
+                    <section id="business-budget">
                         <h2>Business Budget</h2>
                         <h2>£29.99/month</h2>
                         <h5>Unlimited Shared Budgets</h5>
@@ -161,7 +165,7 @@
                         </ul>
                     </section>
                     
-                    <section>
+                    <section id="enterprise-budget">
                         <h2>Enterprise Budget</h2>
                         <h2>£99.99/month</h2>
                         <h5>Customizable Budgets for Enterprises</h5>
@@ -176,11 +180,13 @@
                             <li><i class="fa-solid fa-check"></i>Annual Financial Analysis</li>
                         </ul>
                     </section>
-                    
+    
                 </article>
             </div>
             <div class="form">
+
                 <form action="/submit" method="post">
+                    <h2>Get In Touch</h2>
                     <!-- Name Input -->
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -191,31 +197,34 @@
                     <input type="email" id="email" name="email" placeholder="Enter your email" required>
                     <br><br>
             
-                    <!-- Password Input -->
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                    <!-- Subject Input -->
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" placeholder="Enter your subject" required>
                     <br><br>
             
-                    <!-- Dropdown Menu -->
-                    <label for="role">Select Role:</label>
-                    <select id="role" name="role">
-                        <option value="user">User</option>
-                        <option value="admin">Admin</option>
-                        <option value="guest">Guest</option>
-                    </select>
-                    <br><br>
-            
-                    <!-- Textarea -->
+                    <!-- Message Textarea -->
                     <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" cols="30" placeholder="Type your message here"></textarea>
+                    <textarea id="message" name="message" rows="6" cols="30" placeholder="Type your message here" required></textarea>
                     <br><br>
+            
+                    <!-- Budget Interest Checkbox -->
+                    <fieldset>
+                        <legend>What are you interested in?</legend>
+                        <label><input type="checkbox" name="interest" value="Personal Budget"> Personal Budget</label><br>
+                        <label><input type="checkbox" name="interest" value="Family Budget"> Family Budget</label><br>
+                        <label><input type="checkbox" name="interest" value="Business Budget"> Business Budget</label><br>
+                        <label><input type="checkbox" name="interest" value="Enterprise Budget"> Enterprise Budget</label>
+                    </fieldset>
+                    <br>
             
                     <!-- Submit Button -->
-                    <button type="submit">Submit</button>
+                    <button type="submit">Send Message</button>
                 </form>
             </div>
-        </div>
+            
 
+        </div>
+        
         <footer>
             <h1>Savely</h1>
             <ul>
